@@ -51,12 +51,12 @@ public class CookieExampleServlet extends HttpServlet {
 		output.println("Cookies II");
 		output.println("</TITLE></HEAD><BODY>");
 
-		if (cookies != null) {
+		if (cookies != null && !cookies[0].getName().equals("JSESSIONID")) {
 			output.println("<H1>Recommendations</H1>");
-			output.println("<br> Cookies array size = " + cookies.length + "<br><br>");
 			// get the name of each cookie
 			for (int i = 0; i < cookies.length; i++)
-				output.println(cookies[i].getName() + " How to Program. " + "ISBN#: " + cookies[i].getValue() + "<BR>");
+				if (!cookies[i].getName().equals("JSESSIONID"))
+					output.println(cookies[i].getName() + " : Check out the book with this ISBN#: " + cookies[i].getValue() + "<BR>");
 		} else {
 			output.println("<H1>No Recommendations</H1>");
 			output.println("You did not select a language or");
