@@ -75,13 +75,13 @@ public class AnimalsServlet extends HttpServlet {
 			percentages[i] = 100.0 * animals[i] / total;
 
 		// send a thank you message to client
-		response.setContentType("text/html"); // content type
+		//response.setContentType("text/html"); // content type
 
 		PrintWriter responseOutput = response.getWriter();
 		StringBuffer buf = new StringBuffer();
 		buf.append("<html>\n");
 		buf.append("<title>Thank you!</title>\n");
-		buf.append("Thanks for participating.\n");
+		buf.append("Thanks for participating!\n");
 		buf.append("<BR>Results:\n<PRE>");
 
 		DecimalFormat twoDigits = new DecimalFormat("#0.00");
